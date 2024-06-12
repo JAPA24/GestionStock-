@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { IProducto } from '../models/producto.model';
-
+import { RouterLink } from '@angular/router';
 import { Productoservicio } from '../services/productoservicio.service';
 
 @Component({
   selector: 'app-producto-list',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './producto-list.component.html',
   styleUrl: './producto-list.component.css'
 })

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+/* import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -11,3 +11,4 @@ export class AuthService {
     return this.token.length > 0; 
   }
 }
+ */

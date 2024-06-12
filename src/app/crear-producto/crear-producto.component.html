@@ -1,37 +1,33 @@
-<div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            <h2 class="text-center">Add Product</h2>
-          </div>
-          <div class="card-body">
-            <form (ngSubmit)="onSubmit()">
-              <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" id="title" [(ngModel)]="newProduct.title" name="title" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="price">Price</label>
-                <input type="number" id="price" [(ngModel)]="newProduct.price" name="price" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="description">Description</label>
-                <textarea id="description" [(ngModel)]="newProduct.description" name="description" class="form-control"></textarea>
-              </div>
-              <div class="form-group">
-                <label for="category">Category</label>
-                <input type="text" id="category" [(ngModel)]="newProduct.category" name="category" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="image">Image URL</label>
-                <input type="text" id="image" [(ngModel)]="newProduct.image" name="image" class="form-control">
-              </div>
-              <button type="submit" class="btn btn-primary btn-block mt-3">Add Product</button>
-            </form>
-          </div>
+<div class="container mt-5 add-product-container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card add-product-card">
+        <div class="card-header add-product-card-header">
+          <h2 class="text-center">Agregar Producto</h2>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="title">Titulo</label>
+              <input type="text" id="title" [(ngModel)]="newProduct.title" name="title" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="price">Precio</label>
+              <input type="number" id="price" [(ngModel)]="newProduct.price" name="price" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="description">Descripcion</label>
+              <textarea id="description" [(ngModel)]="newProduct.description" name="description" class="form-control"></textarea>
+            </div>
+      
+            <div class="form-group">
+              <label for="image">Imagen URL</label>
+              <input type="text" id="image" [(ngModel)]="newProduct.image" name="image" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block mt-3 add-product-btn-primary">Guardar</button>
+          </form>
         </div>
       </div>
     </div>
   </div>
-  
+</div>
