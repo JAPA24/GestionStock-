@@ -25,10 +25,10 @@ export class ProductoDeleteComponent implements OnInit {
 
   ngOnInit(): void {
     this.productId = +this.route.snapshot.paramMap.get('id')!;
-    this.getProductDetails(); // Llama a la función para obtener los detalles del producto
+    /* this.getProductDetails(); // Llama a la función para obtener los detalles del producto */
   }
 
-  getProductDetails(): void {
+  /* getProductDetails(): void {
     if (this.productId !== null) {
       this.productoServicio.getProductById(this.productId).subscribe((producto: IProducto) => {
         this.producto = producto;
@@ -36,7 +36,7 @@ export class ProductoDeleteComponent implements OnInit {
       });
     }
   }
-
+ */
   openModal(): void {
     const modalRef = this.modalService.open(ConfirmDeleteModalComponent);
     modalRef.componentInstance.producto = this.producto; // Pasa el producto al componente del modal

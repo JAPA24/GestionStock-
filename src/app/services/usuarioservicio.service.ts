@@ -23,6 +23,7 @@ export class UsuarioServicio {
     // Eliminar el usuario del local storage al cerrar sesión
     localStorage.removeItem(this.localStorageKey);
   }
+  
 
   getCurrentUser(): Usuario | null {
     // Obtener el usuario actual del local storage

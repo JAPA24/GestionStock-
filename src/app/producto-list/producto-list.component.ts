@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { IProducto } from '../models/producto.model';
 import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { Productoservicio } from '../services/productoservicio.service';
+import { UsuarioServicio } from '../services/usuarioservicio.service';
 
 @Component({
   selector: 'app-producto-list',
@@ -15,7 +17,7 @@ export class ProductoListComponent implements OnInit {
 
   listaProducto: IProducto[] = []
 
-  constructor(private _apiService: Productoservicio) { }
+  constructor(private _apiService: Productoservicio,private usuarioService: UsuarioServicio,private router: Router) { }
 
   ngOnInit(): void {
     this.getAllProducts()
@@ -30,6 +32,11 @@ export class ProductoListComponent implements OnInit {
         console.log(error)
       }
     });
+  }
+
+  logout(): void {
+    this.usuarioService.logout(); // Llama al método de logout del servicio de usuario
+    this.router.navigate(['/login']); // Redirige al componente de login después de cerrar sesión
   }
 
 }
