@@ -14,11 +14,13 @@ import { Productoservicio } from '../services/productoservicio.service';
 export class ProductEditComponent implements OnInit {
 
   product: IProducto = {
-    id: 0,
-    title: '',
+    _id:'',
+    name: '',
     description: '',
     price: 0,
-    image: ''
+    image: '',
+    amount:0,
+    category: 1
   };
 
   imagePreview: string | null = null;
@@ -30,11 +32,12 @@ export class ProductEditComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const productId = this.route.snapshot.paramMap.get('id');
+    const productId = this.route.snapshot.paramMap.get('_id');
     if (productId) {
-      this.productoServicio.getProductById(Number(productId)).subscribe(
+      this.productoServicio.getProductById((productId)).subscribe(
         (data: IProducto) => {
           this.product = data;
+        
         },
         error => {
           console.error('Error al obtener el producto:', error);
@@ -44,7 +47,7 @@ export class ProductEditComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.product.title && this.product.price && this.product.description && this.product.image) {
+    if (this.product.name && this.product.price && this.product.description && this.product.image) {
       this.productoServicio.updateProduct(this.product).subscribe(
         () => {
           console.log('Producto editado exitosamente');

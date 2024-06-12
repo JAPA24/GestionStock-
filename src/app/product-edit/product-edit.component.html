@@ -9,7 +9,7 @@
             <form (ngSubmit)="onSubmit()">
               <div class="form-group">
                 <label for="title">Título</label>
-                <input type="text" id="title" [(ngModel)]="product.title" name="title" class="form-control">
+                <input type="text" id="title" [(ngModel)]="product.name" name="title" class="form-control">
               </div>
               <div class="form-group">
                 <label for="price">Precio</label>
@@ -22,6 +22,19 @@
               <div class="form-group">
                 <label for="image">URL de la imagen</label>
                 <input type="text" id="image" [(ngModel)]="product.image" name="image" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="category">Categoría</label>
+                <select id="category" [(ngModel)]="product.category" name="categoria" class="form-control">
+                  <option [value]="1">Teclado y ratón</option> 
+                  <option [value]="2">Micrófono</option> 
+                  <option [value]="3">Auriculares</option> 
+                  <option [value]="4">Computadoras</option> 
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="cantidad">Cantidad</label>
+                <input type="number" id="cantidad" [(ngModel)]="product.amount" name="cantidad" class="form-control">
               </div>
               <button type="submit" class="btn btn-primary btn-block mt-3 edit-product-btn-primary">Actualizar Producto</button>
             </form>
