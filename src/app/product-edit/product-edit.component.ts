@@ -14,7 +14,7 @@ import { Productoservicio } from '../services/productoservicio.service';
 export class ProductEditComponent implements OnInit {
 
   product: IProducto = {
-    id:'',
+    _id:'',
     name: '',
     description: '',
     price: 0,
@@ -32,11 +32,12 @@ export class ProductEditComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const productId = this.route.snapshot.paramMap.get('id');
+    const productId = this.route.snapshot.paramMap.get('_id');
     if (productId) {
       this.productoServicio.getProductById((productId)).subscribe(
         (data: IProducto) => {
           this.product = data;
+        
         },
         error => {
           console.error('Error al obtener el producto:', error);
