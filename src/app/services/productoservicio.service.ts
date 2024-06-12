@@ -26,7 +26,7 @@ export class Productoservicio {
   }
 
   public updateProduct(product: IProducto): Observable<IProducto> {
-    return this._httpClient.put<IProducto>(`${this.baseUrl}/${product.id}`, product);
+    return this._httpClient.put<IProducto>(`${this.baseUrl}/${product._id}`, product);
   }
 
   public deleteProduct(productId: number): Observable<void> {

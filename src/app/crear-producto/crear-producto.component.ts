@@ -15,7 +15,7 @@ import { IProducto } from '../models/producto.model';
 export class CrearProductoComponent {
 
 
-  newProduct: IProducto = {  id:'', name: '', description: '', price: 0, image: '', category:1, amount:0 }; // Define newProduct como tipo IProducto
+  newProduct: IProducto = {  _id:'', name: '', description: '', price: 0, image: '', category:1, amount:0 }; // Define newProduct como tipo IProducto
 
 
   
