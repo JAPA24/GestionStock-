@@ -25,7 +25,7 @@
             <h5 class="card-title">{{product.name}}</h5>
             <p class="card-text">{{product.description}}</p>
             <div class="mt-auto">
-              <a [routerLink]="['/edit', product._id]" class="btn btn-warning d-block mb-2">Editar</a>
+              <a [routerLink]="['/edit', product._id]" (click)="editProduct(product)" class="btn btn-warning d-block mb-2">Editar</a>
               <a [routerLink]="['/eliminar', product._id]" class="btn btn-danger d-block">Eliminar</a>
             </div>
           </div>

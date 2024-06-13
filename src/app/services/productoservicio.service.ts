@@ -26,6 +26,7 @@ export class Productoservicio {
   }
 
   public updateProduct(product: IProducto): Observable<IProducto> {
+    //console.log(product);
     return this._httpClient.put<IProducto>(`${this.baseUrl}/${product._id}`, product);
   }
 
