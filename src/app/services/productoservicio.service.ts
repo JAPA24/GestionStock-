@@ -7,18 +7,30 @@ import { IProducto } from '../models/producto.model';
   providedIn: 'root'
 })
 export class Productoservicio {
-  private url = 'https://fakestoreapi.com/products'
-  private url2 =  ''
+  private baseUrl = 'https://backend-tp-integrador-gestorde-stock.vercel.app/api/v1';
+  
   private _httpClient = inject(HttpClient)
   
   constructor() { }
 
   public getAllProducts(): Observable<IProducto[]> {
-    return this._httpClient.get<IProducto[]>(this.url)
- }
+    return this._httpClient.get<IProducto[]>(${this.baseUrl}/todos);
+  }
 
- public crearProducto(producto: IProducto): Observable<IProducto> {
-  return this._httpClient.post<IProducto>(`${this.url2}/productos`, producto);
-}
+  public crearProducto(producto: IProducto): Observable<IProducto> {
+    return this._httpClient.post<IProducto>(${this.baseUrl}/, producto);
+  }
 
+  public getProductById(id: string): Observable<IProducto> {
+    return this._httpClient.get<IProducto>(${this.baseUrl}/${id});
+  }
+
+  public updateProduct(product: IProducto): Observable<IProducto> {
+    //console.log(product);
+    return this._httpClient.put<IProducto>(${this.baseUrl}/${product._id}, product);
+  }
+
+  public deleteProduct(productId: string): Observable<void> {
+    return this._httpClient.delete<void>(${this.baseUrl}/${productId});
+  }
 }

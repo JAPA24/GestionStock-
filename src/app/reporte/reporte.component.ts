@@ -28,8 +28,8 @@ export class ReporteComponent {
     let report = 'Stock Report\n\n';
 
     products.forEach(product => {
-      report += `Product: ${product.title}\n`;
-      report += `Description: ${product.description}\n`; // Utiliza el campo description
+      report += `Product: ${product.name}\n`;
+      report += `Description: ${product.description}\n`; 
       report += `Price: ${product.price}\n`;
       
     });

@@ -1,0 +1,47 @@
+<div class="container mt-5 edit-product-container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card edit-product-card">
+          <div class="card-header edit-product-card-header">
+            <h2 class="text-center">Editar Producto</h2>
+          </div>
+          <div class="card-body">
+            <form (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label for="title">Título</label>
+                <input type="text" id="title" [(ngModel)]="product.name" name="title" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="price">Precio</label>
+                <input type="number" id="price" [(ngModel)]="product.price" name="price" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="description">Descripción</label>
+                <textarea id="description" [(ngModel)]="product.description" name="description" class="form-control"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="image">URL de la imagen</label>
+                <input type="text" id="image" [(ngModel)]="product.image" name="image" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="category">Categoría</label>
+                <select id="category" [(ngModel)]="product.category" name="categoria" class="form-control">
+                  <option [value]="1">Teclado y ratón</option> 
+                  <option [value]="2">Micrófono</option> 
+                  <option [value]="3">Auriculares</option> 
+                  <option [value]="4">Computadoras</option> 
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="cantidad">Cantidad</label>
+                <input type="number" id="cantidad" [(ngModel)]="product.amount" name="cantidad" class="form-control">
+              </div>
+              <button type="submit" class="btn btn-primary btn-block mt-3 edit-product-btn-primary">Actualizar Producto</button>
+            </form>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

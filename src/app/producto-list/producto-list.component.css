@@ -1,59 +1,87 @@
-/* Estilos adicionales para mejorar la apariencia del componente de productos */
+
 .container {
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.card-img-top {
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+
+.animated {
+  animation: slideInUp 3s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
   }
-  
-  .card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: none;
-    transition: transform 0.3s, box-shadow 0.3s;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-  }
-  
-  .card-text {
-    font-size: 1rem;
-    color: #6c757d;
-  }
-  
-  .card-img-top {
-    max-height: 200px;
-    object-fit: cover;
-  }
-  
-  .btn-primary {
-    background-color: #007bff;
-    border: none;
-  }
-  
-  .btn-primary:hover {
-    background-color: #0056b3;
-  }
-  
-  h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-  }
-  
-  .text-center {
-    text-align: center;
-  }
-  
-  .mb-4 {
-    margin-bottom: 1.5rem;
-  }
-  
-  .mt-5 {
-    margin-top: 3rem;
-  }
-  
+}
+
+
+.card-body .mt-auto {
+  margin-top: auto;
+}
+
+.card-body .btn {
+  width: 100%;
+}
+
+.card-body .btn + .btn {
+  margin-top: 0.5rem;
+}

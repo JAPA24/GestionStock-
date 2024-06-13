@@ -1,14 +1,13 @@
-/* Puedes añadir esto al archivo CSS del componente o en tu archivo de estilos globales */
 
-/* Estilos adicionales para mejorar la apariencia */
+
 body {
     background-color: #2e7fcf
-        /* Color de fondo para todo el cuerpo de la página */
+     
 }
 
 .container {
     background-color: #f8f9fa;
-    /* Color de fondo para el contenedor principal */
+    
     padding: 20px;
     border-radius: 10px;
 }
@@ -19,7 +18,7 @@ body {
     border-radius: 10px
 }
 
-/* Opcional: Añadir sombras y bordes para una mejor apariencia */
+
 .card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: none;

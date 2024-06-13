@@ -1,28 +1,28 @@
 
-.report-container {
+.edit-product-container, .add-product-container {
     background-color: #f8f9fa; 
     padding: 20px;
     border-radius: 10px;
   }
   
-  .report-card {
+  .edit-product-card, .add-product-card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     border: none;
   }
   
-  .report-card-header {
-    background-color: #007bff;
+  .edit-product-card-header, .add-product-card-header {
+    background-color: #007bff; 
     color: #fff; 
     border-bottom: none;
   }
   
   
-  .generate-report-btn {
+  .edit-product-btn-primary, .add-product-btn-primary {
     background-color: #007bff; 
     border: none;
   }
   
-  .generate-report-btn:hover {
+  .edit-product-btn-primary:hover, .add-product-btn-primary:hover {
     background-color: #0056b3; 
   }
   
