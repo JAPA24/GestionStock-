@@ -24,7 +24,8 @@ export class ProductoDeleteComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.productId = +this.route.snapshot.paramMap.get('id')!;
+    this.productId =history.state.product._id;
+    console.log(this.productId)
     /* this.getProductDetails(); // Llama a la función para obtener los detalles del producto */
   }
 
@@ -43,7 +44,7 @@ export class ProductoDeleteComponent implements OnInit {
 
     modalRef.result.then((result) => {
       if (result === 'delete') {
-        this.deleteProduct();
+        this.deleteProduct(modalRef.componentInstance.producto);
       } else {
         this.router.navigate(['/products']);
       }
@@ -52,7 +53,7 @@ export class ProductoDeleteComponent implements OnInit {
     });
   }
 
-  deleteProduct(): void {
+  deleteProduct(_id: string): void {
     if (this.productId !== null) {
       this.productoServicio.deleteProduct(this.productId).subscribe(() => {
         this.router.navigate(['/products']);

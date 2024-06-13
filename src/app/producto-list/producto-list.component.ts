@@ -54,6 +54,9 @@ export class ProductoListComponent implements OnInit {
     this.router.navigate(['/edit', product._id], { state: { product } });
   }
 
+deleteProduct(product: IProducto) {
+  this.router.navigate(['/eliminar', product._id], { state: { product } });}
+
 
   logout(): void {
     this.usuarioService.logout(); // Llama al método de logout del servicio de usuario
