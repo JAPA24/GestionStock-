@@ -14,23 +14,23 @@ export class Productoservicio {
   constructor() { }
 
   public getAllProducts(): Observable<IProducto[]> {
-    return this._httpClient.get<IProducto[]>(`${this.baseUrl}/todos`);
+    return this._httpClient.get<IProducto[]>(${this.baseUrl}/todos);
   }
 
   public crearProducto(producto: IProducto): Observable<IProducto> {
-    return this._httpClient.post<IProducto>(`${this.baseUrl}/`, producto);
+    return this._httpClient.post<IProducto>(${this.baseUrl}/, producto);
   }
 
   public getProductById(id: string): Observable<IProducto> {
-    return this._httpClient.get<IProducto>(`${this.baseUrl}/${id}`);
+    return this._httpClient.get<IProducto>(${this.baseUrl}/${id});
   }
 
   public updateProduct(product: IProducto): Observable<IProducto> {
     //console.log(product);
-    return this._httpClient.put<IProducto>(`${this.baseUrl}/${product._id}`, product);
+    return this._httpClient.put<IProducto>(${this.baseUrl}/${product._id}, product);
   }
 
-  public deleteProduct(productId: number): Observable<void> {
-    return this._httpClient.delete<void>(`${this.baseUrl}/${productId}`);
+  public deleteProduct(productId: string): Observable<void> {
+    return this._httpClient.delete<void>(${this.baseUrl}/${productId});
   }
 }
