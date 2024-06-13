@@ -25,18 +25,25 @@ export class ProductoListComponent implements OnInit {
   
   listaProducto: IProducto[] = []
   static product: any;
-
+  index : IProducto[] = this.listaProducto;
   constructor(private _apiService: Productoservicio,private usuarioService: UsuarioServicio,private router: Router) { 
   }
 
   ngOnInit(): void {
     this.getAllProducts()
+    this.reloadPage(); 
+  }
+
+  reloadPage(): void {
+    if ( this.index != this.listaProducto ) {
+      location.reload();
+    }
   }
 
   getAllProducts() {
     this._apiService.getAllProducts().subscribe({
       next: data => {
-        console.log(data)
+        console.log(data);
         this.listaProducto = data
       }, error: error => {
         console.log(error)

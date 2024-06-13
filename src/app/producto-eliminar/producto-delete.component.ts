@@ -13,7 +13,7 @@ import { IProducto } from '../models/producto.model'; // Importa el modelo IProd
   styleUrls: ['./producto-delete.component.css']
 })
 export class ProductoDeleteComponent implements OnInit {
-  productId: number | null = null;
+  productId: string | null = null;
   producto: IProducto | null = null; 
 
   constructor(
@@ -24,20 +24,15 @@ export class ProductoDeleteComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.productId =history.state.product._id;
+    this.productId = history.state.product._id;
     console.log(this.productId)
-    /* this.getProductDetails(); // Llama a la función para obtener los detalles del producto */
+    this.getProductDetails(); // Llama a la función para obtener los detalles del producto
   }
 
-  /* getProductDetails(): void {
-    if (this.productId !== null) {
-      this.productoServicio.getProductById(this.productId).subscribe((producto: IProducto) => {
-        this.producto = producto;
-        this.openModal(); // Abre el modal después de obtener los detalles del producto
-      });
+  getProductDetails(): void {
+      this.openModal(); // Abre el modal después de obtener los detalles del producto
     }
-  }
- */
+    
   openModal(): void {
     const modalRef = this.modalService.open(ConfirmDeleteModalComponent);
     modalRef.componentInstance.producto = this.producto; // Pasa el producto al componente del modal
