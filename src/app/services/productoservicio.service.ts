@@ -7,7 +7,7 @@ import { IProducto } from '../models/producto.model';
   providedIn: 'root'
 })
 export class Productoservicio {
-  private baseUrl = 'https://backend-tp-integrador-gestorde-stock.vercel.app/api/v1';
+  private baseUrl = 'http://localhost:3000/api/v1';
   
   private _httpClient = inject(HttpClient)
   

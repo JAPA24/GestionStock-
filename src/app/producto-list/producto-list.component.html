@@ -1,21 +1,19 @@
 <div class="container mt-3">
-  <div class="row justify-content-end">
+  <div class="row align-items-center">
     <div class="col-auto">
-      <a [routerLink]="['/crear']" class="btn btn-success">Crear Producto</a>
+      <img src="../../assets/gestión stock (2).png" alt="logo">
     </div>
-    <div class="col-auto">
-      <button class="btn btn-danger" (click)="logout()">Logout</button>
+    <div class="col d-flex justify-content-end">
+      <a [routerLink]="['/crear']" class="btn btn-success mx-2">Crear Producto</a>
+      <a [routerLink]="['/reporte']" class="btn btn-info mx-2">Reporte</a>
+      <button class="btn btn-danger mx-2" (click)="logout()">Cierre de sesion</button>
     </div>
   </div>
 </div>
 
 <div class="container mt-5">
-  <h1 class="text-center mb-4 animated">Stock</h1> 
+  <h1 class="text-center mb-4 animated">Gestion de Stock</h1> 
   <div class="row mb-3">
-    <div class="col-auto">
-      <a [routerLink]="['/reporte']" class="btn btn-info">Reporte</a>
-    </div>
-  </div>
   <div class="row">
     @for (product of listaProducto; track product._id) {
       <div class="col-sm-6 col-md-4 col-lg-3 mb-4  animated">
@@ -23,7 +21,9 @@
           <img src="{{product.image}}" class="card-img-top" alt="Product Image">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">{{product.name}}</h5>
-            <p class="card-text">{{product.description}}</p>
+            <p class="card-text"> Descripcion: {{product.description}}</p>
+            <p class="card-text">Cantidad: {{product.amount}}</p>
+            <p class="card-text">Costo: {{product.price}}</p>
             <div class="mt-auto">
               <a [routerLink]="['/edit', product._id]" (click)="editProduct(product)" class="btn btn-warning d-block mb-2">Editar</a>
               <a [routerLink]="['/eliminar', product._id]" (click)="deleteProduct(product)" class="btn btn-danger d-block">Eliminar</a>

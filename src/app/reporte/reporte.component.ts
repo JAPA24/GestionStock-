@@ -16,7 +16,7 @@ export class ReporteComponent {
 
   generateReport(): void {
     // Lógica para generar el informe de stock
-    this.http.get<IProducto[]>('https://fakestoreapi.com/products').subscribe((products: IProducto[]) => {
+    this.http.get<IProducto[]>('https://backend-tp-integrador-gestorde-stock.vercel.app/api/v1/todos').subscribe((products: IProducto[]) => {
       const reportData = this.prepareReportData(products);
       const blob = new Blob([reportData], { type: 'text/plain;charset=utf-8' });
       saveAs(blob, 'stock_report.txt');
